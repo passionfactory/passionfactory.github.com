@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Migrasi Wordpress, Octopress, & Exitwp - Passion Factory</title>
+  <title>How To Make Eclipse Ide Support Retina Display - Passion Factory</title>
   <meta name="author" content="Syaiful Bahri">
 
   
-  <meta name="description" content="Tanya Kenapa? Bosen sama wordpress.
-Artikel Bapak Endy Ini sepertinya cukup mewakili alasan saya yang lain. Catatan Saya akan menggunakan exitwp &hellip;">
+  <meta name="description" content="Got a retina display macbook pro, suddenly falling in love with the display, but seem my eclipse ide is not supporting the display resolution which &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Artikel Bapak Endy Ini sepertinya cukup mewakili alasan saya yang lain. Catatan 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/">
+  <link rel="canonical" href="http://passionfactory.github.com/blog/2013/01/15/how-to-make-eclipse-ide-support-retina-display/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,7 +61,7 @@ Artikel Bapak Endy Ini sepertinya cukup mewakili alasan saya yang lain. Catatan 
   
   <header>
     
-      <h1 class="entry-title">Migrasi Wordpress, Octopress, & Exitwp</h1>
+      <h1 class="entry-title">How to Make Eclipse Ide Support Retina Display</h1>
     
     
       <p class="meta">
@@ -78,77 +77,17 @@ Artikel Bapak Endy Ini sepertinya cukup mewakili alasan saya yang lain. Catatan 
   
 
 
-<time datetime="2012-11-10T22:58:00+07:00" pubdate data-updated="true">Nov 10<span>th</span>, 2012</time>
+<time datetime="2013-01-15T08:45:00+07:00" pubdate data-updated="true">Jan 15<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><strong>Tanya Kenapa?</strong></p>
-
-<ul>
-<li>Bosen sama wordpress.</li>
-<li><a href="http://software.endy.muhardin.com/aplikasi/terima-kasih-wordpress/" title="Terimakasih Wordpress">Artikel Bapak Endy Ini </a> sepertinya cukup mewakili alasan saya yang lain.<!-- more --></li>
-</ul>
+<div class="entry-content"><blockquote><p>Got a retina display macbook pro, suddenly falling in love with the display, but seem my eclipse ide is not supporting the display resolution which is 2880 x 1800 px. Ah, eclipse ide display look terrifying.</p></blockquote>
 
 
-<p><strong>Catatan</strong></p>
 
-<ul>
-<li>Saya akan menggunakan <a href="https://github.com/thomasf/exitwp">exitwp</a> untuk melakukan konversi artikel wordpress saya menjadi format markdown yang akan digunakan oleh <a href="http://octopress.org">octopress</a>.</li>
-<li>Sistem operasi yang saya gunakan adalah OS X Mountain Lion</li>
-<li><a href="http://mxcl.github.com/homebrew/">Brew package manager</a> sudah terinstal pada sistem operasi saya.</li>
-</ul>
-
-
-<p><strong>Proses Migrasi</strong></p>
-
-<p>instal dependencies yang dibutuhkan</p>
-
-<pre><code>brew install libyaml
-</code></pre>
-
-<p>instal virtualenv untuk menggunakan pip</p>
-
-<pre><code>$ curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
-</code></pre>
-
-<p>instal dependencies untuk menggunakan exitwp menggunakan pip</p>
-
-<pre><code>pip install --upgrade -r python-yaml python-beautifulsoup python-html2text
-</code></pre>
-
-<p>download atau clone repository exitwp di sini <a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
-
-<pre><code>git clone https://github.com/thomasf/exitwp
-</code></pre>
-
-<p>export artikel wordpress menggunakan wordpress exporter</p>
-
-<pre><code>login, kemudian gunakan wordpress exporter tool yang ada di menu setting,
-hasil export berupa file xml yang akan dikonversi menjadi format markdown,
-letakan file xml tersebut pada directory wordpress-xml yang ada pada directory exitwp
-yang sudah didownload.
-</code></pre>
-
-<p>note bagi wordpress versi 3.1</p>
-
-<pre><code>tambahkan xmlns:atom="http://www.w3.org/2005/Atom" pada file xml
-untuk mengatasi error namespace
-</code></pre>
-
-<p>rubah direktori aktif ke wordpress-xml directory</p>
-
-<pre><code>run  xmllint untuk melakukan pengecekan error file xml yang telah diexport
-</code></pre>
-
-<p>rubah direktori aktif ke folder exitwp, kemudian jalankan command dibawah ini untuk melakukan konversi</p>
-
-<pre><code>python exitwp.py
-</code></pre>
-
-<p>hasil konversi akan berada pada build directory, pada artikel selanjutnya akan dibahas bagaimana menggunakan artikel yang sudah dikonversi tersebut pada octopress</p>
 </div>
 
 
@@ -171,12 +110,12 @@ untuk mengatasi error namespace
   
 
 
-<time datetime="2012-11-10T22:58:00+07:00" pubdate data-updated="true">Nov 10<span>th</span>, 2012</time>
+<time datetime="2013-01-15T08:45:00+07:00" pubdate data-updated="true">Jan 15<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/dear-diary/'>Dear Diary</a>, <a class='category' href='/blog/categories/macinthos/'>Macinthos</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+    <a class='category' href='/blog/categories/java/'>Java</a>, <a class='category' href='/blog/categories/macinthos/'>Macinthos</a>
   
 </span>
 
@@ -185,7 +124,7 @@ untuk mengatasi error namespace
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/" data-via="tragicidea" data-counturl="http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://passionfactory.github.com/blog/2013/01/15/how-to-make-eclipse-ide-support-retina-display/" data-via="tragicidea" data-counturl="http://passionfactory.github.com/blog/2013/01/15/how-to-make-eclipse-ide-support-retina-display/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -198,10 +137,8 @@ untuk mengatasi error namespace
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/11/07/kadang-karena-satu-dan-lain-hal/" title="Previous Post: Kadang karena satu dan lain hal,">&laquo; Kadang karena satu dan lain hal,</a>
+        <a class="basic-alignment left" href="/blog/2012/12/20/jujur-itu/" title="Previous Post: Jujur itu?">&laquo; Jujur itu?</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/11/11/beli-mobil/" title="Next Post: Beli Mobil, beli bangku">Beli Mobil, beli bangku &raquo;</a>
       
     </p>
   </footer>
@@ -304,8 +241,8 @@ untuk mengatasi error namespace
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/';
-        var disqus_url = 'http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/';
+        var disqus_identifier = 'http://passionfactory.github.com/blog/2013/01/15/how-to-make-eclipse-ide-support-retina-display/';
+        var disqus_url = 'http://passionfactory.github.com/blog/2013/01/15/how-to-make-eclipse-ide-support-retina-display/';
         var disqus_script = 'embed.js';
       
     (function () {
