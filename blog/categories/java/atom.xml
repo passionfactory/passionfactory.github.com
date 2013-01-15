@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | Passion Factory]]></title>
+  <link href="http://passionfactory.github.com/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://passionfactory.github.com/"/>
+  <updated>2013-01-15T08:22:13+07:00</updated>
+  <id>http://passionfactory.github.com/</id>
+  <author>
+    <name><![CDATA[Syaiful Bahri]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Blackberry 10 Dev Alpha, Android Runtime Support & Sideload Install.]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/10/28/blackberry-10-dev-alpha-android-runtime-support-sideload-install/"/>
+    <updated>2012-10-28T06:18:01+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/10/28/blackberry-10-dev-alpha-android-runtime-support-sideload-install</id>
+    <content type="html"><![CDATA[<p>Pada event Blackberry 10 Jam World Tour Jakarta, saya bersama beberapa peserta terpilih berkesempatan untuk mendapatkan prototype blackberry 10 yang dinamakan blackberry 10 dev alpha. Sebenarnya ini bukan berita baru, tetapi karena baru belakangan ini saya bisa hands-on dengan prototype blackberry 10 tersebut, dan menemukan beberapa hal menarik, salah satunya adalah mengenai metode pengembangan baru menggunakan android runtime, yang dalam hal ini menguntungkan developer yang mengembangkan aplikasi android untuk melakukan porting dengan mudah pada device blackberry 10 nantinya ketika sudah resmi di launching.<!-- more --></p>
+
+<p>Tujuan RIM membagikan prototype blackberry 10 tersebut kepada developer tidak lain adalah untuk memberikan kesempatan kepada developer baik yang berbasis native development (QT, C++), webwork, air dan android runtime untuk mencoba mengembangkan aplikasi di blackberry 10, saya sendiri karena memiliki latar belakang pengembangan berbasis android, mencoba untuk menggunakan metode berbasis android runtime, melakukan porting aplikasi yang pernah saya buat menggunakan tool yang sudah disediakan resource nya di <a href="http://developer.blackberry.com">sini</a>. Menarik, bahkan dengan online tool yang tersedia, saya tidak perlu melakukan perubahan sama sekali pada kode program android yang pernah saya buat, saya hanya perlu mengimport .apk saya dan secara otomatis online tool tersebut akan melakukan konversi menjadi .bar yang merupakan format file aplikasi yang juga merupakan format file aplikasi pada playbook.</p>
+
+<p>Saya tidak akan menyinggung banyak mengenai blackberry 10 dev alphanya, secara berkala saya akan mencatat hands-on saya di blog ini mengenai blackberry 10 dev alpha tersebut, yang akan saya sampaikan selanjutnya adalah mengenai metode instalasi aplikasi yang sudah saya porting (tanpa menemui kendala / tidak gagal) juga beberapa aplikasi android (yang free tentunya) yang sengaja saya coba porting untuk saya gunakan pada blackberry 10 dev alpha ini, karena saya terkesan dengan user interface dan experiencenya.</p>
+
+<p>Metode instalasi yang saya gunakan dinamakan sideload, dimana saya akan menginstalasikan secara langsung melalui jaringan wifi yang terhubung pada network yang sama menggunakan playbook tools yang bisa di download <a href="http://www.mediafire.com/?msi5u4ni3h8nx53">di sini</a>. Saya menggunakan OS X, dan belum mencoba metode ini pada Windows, setelah di download extract file playbook tools yang sudah di download pada direktori yang anda inginkan. Berikut ini beberapa tahap yang dilakukan :</p>
+
+<ol>
+<li><p>Pastikan mengetahui ip address yang digunakan oleh blackberry 10 dev alpha dengan membuka menu setting - network connections - wifi - advanced - internet connection yang akan digunakan pada proses instalasi.</p></li>
+<li><p>Aktifkan development mode yang terdapat pada menu setting - security and privacy - development mode, masukan password yang akan digunakan pada proses instalasi nantinya</p></li>
+<li><p>Letakan aplikasi android yang sudah diporting (.bar) pada kedalam direktori yang sama dengan file playbook tool yang sudah di extract kemudian gunakan perintah dibawah ini untuk melakukan instalasi menggunakan metode sideload, sebagai contoh saya akan melakukan instalasi twitter for android yang sudah diporting menjadi file .bar</p></li>
+</ol>
+
+
+<pre><code>java -Xmx512M -jar BarDeploy.jar -installApp -device 192.168.1.101 -password 1234 Twitter.bar
+</code></pre>
+
+<p>sesuaikan dengan ip address dan password development mode pada device, serta nama aplikasi yang diinstalasikan. Menarik bukan, bisa menggunakan aplikasi android yang biasa digunakan + BBM-an, seperti memiliki android device dan blackberry dalam 1 device, thats all :-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ada Yang Baru Di Update BB 10 Dev Alpha]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/09/26/ada-yang-baru-di-update-bb-10-dev-alpha/"/>
+    <updated>2012-09-26T14:58:35+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/09/26/ada-yang-baru-di-update-bb-10-dev-alpha</id>
+    <content type="html"><![CDATA[<p><a href="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-7-55-46-am.png"><img src="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-7-55-46-am.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dan Ternyata Open JDK Aja Engga Cukup. ]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/09/18/dan-ternyata-open-jdk-aja-engga-cukup/"/>
+    <updated>2012-09-18T14:45:34+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/09/18/dan-ternyata-open-jdk-aja-engga-cukup</id>
+    <content type="html"><![CDATA[<p>Hell yeah, android plugins buat eclipse ternyata engga mau di install open jdk di linux, muter sana - sini (halah, bahasanya) ternyata itu source repo udah diremove sama si lucid, maksud gw yang ini nich.<!-- more --></p>
+
+<pre><code>deb http://archive.canonical.com/ lucid partner
+</code></pre>
+
+<p>Untungnya ada seseorang nan jauh di sana (halah, lagi...) menyediakan source repo ntu jdk, yach walaupun jdk 6, lumayanlah, nanti kita upgrade ya ke jdk yang baru, biar gaul gituh :D.</p>
+
+<p>Ini source repo yang gw maksud</p>
+
+<pre><code>ppa:ferramroberto/java
+</code></pre>
+
+<p>Gimana nambain source reponya?</p>
+
+<pre><code>sudo add-apt-repository ppa:ferramroberto/java
+</code></pre>
+
+<p>Terus? biasa di update dulu, masih kaku aja :D</p>
+
+<pre><code>sudo apt-get update
+</code></pre>
+
+<p>Selanjutnya di instal</p>
+
+<pre><code>sudo apt-get install sun-java6-jdk
+</code></pre>
+
+<p>Udah? ya udahlah :D. Ntu source repo juga ada jre nya kalo perlu.</p>
+]]></content>
+  </entry>
+  
+</feed>

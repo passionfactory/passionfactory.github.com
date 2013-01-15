@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Android | Passion Factory]]></title>
+  <link href="http://passionfactory.github.com/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://passionfactory.github.com/"/>
+  <updated>2013-01-15T08:22:13+07:00</updated>
+  <id>http://passionfactory.github.com/</id>
+  <author>
+    <name><![CDATA[Syaiful Bahri]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SSH File Transfer Protocol Android Menggunakan SSHDroid]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid/"/>
+    <updated>2012-12-06T17:19:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid</id>
+    <content type="html"><![CDATA[<p>Jadi itu file-file .apk yang kepasang di file system (yang free dan legal tentunya ya) mau dibackup karena mau di reset.Sebenernya ada <a href="https://play.google.com/store/apps/details?id=jackpal.androidterm&amp;hl=en">terminal emulator</a>. Kalo hapenya udah di root bisa langsung mengakses directory .apk yang ada di directory data, lalu menyalin .apk yang ada ke sd card, kemudian untuk menyalin nya ke komputer selanjutnya tinggal menghubungkan hapenya dengan kabel data atau mengeluarkan sd card lalu memasangkan nya dengan card reader, report? yach saya merasakan nya juga.<!--more--></p>
+
+<p><blockquote><p>Bagaimana kalo bisa langsung saja menyalin file .apk yang terpasang di direktori sistem android ke komputer?</p></blockquote></p>
+
+<p>Unduh dulu SSHDroid <a href="https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid&amp;hl=en">di sini</a> jalankan SSHDroid, kemudian gunakan alamat IP yang tertera untuk menghubungkan sftp klien pada komputer dengan perangkat android</p>
+
+<p><img src="/images/sshdroid.png"></p>
+
+<p>saya menggunakan <a href="http://cyberduck.ch">Cyberduck</a> sebagai klien sftp yang saya gunakan pada komputer saya, gunakan root sebagai username dan password admin untuk memulai koneksi</p>
+
+<p><img src="/images/cyberduck1.png"></p>
+
+<p>file .apk yang akan saya salin berada pada direktori /data/app</p>
+
+<p><img src="/images/cyberduck2.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blackberry 10 Dev Alpha, Android Runtime Support & Sideload Install.]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/10/28/blackberry-10-dev-alpha-android-runtime-support-sideload-install/"/>
+    <updated>2012-10-28T06:18:01+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/10/28/blackberry-10-dev-alpha-android-runtime-support-sideload-install</id>
+    <content type="html"><![CDATA[<p>Pada event Blackberry 10 Jam World Tour Jakarta, saya bersama beberapa peserta terpilih berkesempatan untuk mendapatkan prototype blackberry 10 yang dinamakan blackberry 10 dev alpha. Sebenarnya ini bukan berita baru, tetapi karena baru belakangan ini saya bisa hands-on dengan prototype blackberry 10 tersebut, dan menemukan beberapa hal menarik, salah satunya adalah mengenai metode pengembangan baru menggunakan android runtime, yang dalam hal ini menguntungkan developer yang mengembangkan aplikasi android untuk melakukan porting dengan mudah pada device blackberry 10 nantinya ketika sudah resmi di launching.<!-- more --></p>
+
+<p>Tujuan RIM membagikan prototype blackberry 10 tersebut kepada developer tidak lain adalah untuk memberikan kesempatan kepada developer baik yang berbasis native development (QT, C++), webwork, air dan android runtime untuk mencoba mengembangkan aplikasi di blackberry 10, saya sendiri karena memiliki latar belakang pengembangan berbasis android, mencoba untuk menggunakan metode berbasis android runtime, melakukan porting aplikasi yang pernah saya buat menggunakan tool yang sudah disediakan resource nya di <a href="http://developer.blackberry.com">sini</a>. Menarik, bahkan dengan online tool yang tersedia, saya tidak perlu melakukan perubahan sama sekali pada kode program android yang pernah saya buat, saya hanya perlu mengimport .apk saya dan secara otomatis online tool tersebut akan melakukan konversi menjadi .bar yang merupakan format file aplikasi yang juga merupakan format file aplikasi pada playbook.</p>
+
+<p>Saya tidak akan menyinggung banyak mengenai blackberry 10 dev alphanya, secara berkala saya akan mencatat hands-on saya di blog ini mengenai blackberry 10 dev alpha tersebut, yang akan saya sampaikan selanjutnya adalah mengenai metode instalasi aplikasi yang sudah saya porting (tanpa menemui kendala / tidak gagal) juga beberapa aplikasi android (yang free tentunya) yang sengaja saya coba porting untuk saya gunakan pada blackberry 10 dev alpha ini, karena saya terkesan dengan user interface dan experiencenya.</p>
+
+<p>Metode instalasi yang saya gunakan dinamakan sideload, dimana saya akan menginstalasikan secara langsung melalui jaringan wifi yang terhubung pada network yang sama menggunakan playbook tools yang bisa di download <a href="http://www.mediafire.com/?msi5u4ni3h8nx53">di sini</a>. Saya menggunakan OS X, dan belum mencoba metode ini pada Windows, setelah di download extract file playbook tools yang sudah di download pada direktori yang anda inginkan. Berikut ini beberapa tahap yang dilakukan :</p>
+
+<ol>
+<li><p>Pastikan mengetahui ip address yang digunakan oleh blackberry 10 dev alpha dengan membuka menu setting - network connections - wifi - advanced - internet connection yang akan digunakan pada proses instalasi.</p></li>
+<li><p>Aktifkan development mode yang terdapat pada menu setting - security and privacy - development mode, masukan password yang akan digunakan pada proses instalasi nantinya</p></li>
+<li><p>Letakan aplikasi android yang sudah diporting (.bar) pada kedalam direktori yang sama dengan file playbook tool yang sudah di extract kemudian gunakan perintah dibawah ini untuk melakukan instalasi menggunakan metode sideload, sebagai contoh saya akan melakukan instalasi twitter for android yang sudah diporting menjadi file .bar</p></li>
+</ol>
+
+
+<pre><code>java -Xmx512M -jar BarDeploy.jar -installApp -device 192.168.1.101 -password 1234 Twitter.bar
+</code></pre>
+
+<p>sesuaikan dengan ip address dan password development mode pada device, serta nama aplikasi yang diinstalasikan. Menarik bukan, bisa menggunakan aplikasi android yang biasa digunakan + BBM-an, seperti memiliki android device dan blackberry dalam 1 device, thats all :-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dan Ternyata Open JDK Aja Engga Cukup. ]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/09/18/dan-ternyata-open-jdk-aja-engga-cukup/"/>
+    <updated>2012-09-18T14:45:34+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/09/18/dan-ternyata-open-jdk-aja-engga-cukup</id>
+    <content type="html"><![CDATA[<p>Hell yeah, android plugins buat eclipse ternyata engga mau di install open jdk di linux, muter sana - sini (halah, bahasanya) ternyata itu source repo udah diremove sama si lucid, maksud gw yang ini nich.<!-- more --></p>
+
+<pre><code>deb http://archive.canonical.com/ lucid partner
+</code></pre>
+
+<p>Untungnya ada seseorang nan jauh di sana (halah, lagi...) menyediakan source repo ntu jdk, yach walaupun jdk 6, lumayanlah, nanti kita upgrade ya ke jdk yang baru, biar gaul gituh :D.</p>
+
+<p>Ini source repo yang gw maksud</p>
+
+<pre><code>ppa:ferramroberto/java
+</code></pre>
+
+<p>Gimana nambain source reponya?</p>
+
+<pre><code>sudo add-apt-repository ppa:ferramroberto/java
+</code></pre>
+
+<p>Terus? biasa di update dulu, masih kaku aja :D</p>
+
+<pre><code>sudo apt-get update
+</code></pre>
+
+<p>Selanjutnya di instal</p>
+
+<pre><code>sudo apt-get install sun-java6-jdk
+</code></pre>
+
+<p>Udah? ya udahlah :D. Ntu source repo juga ada jre nya kalo perlu.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Creating Your Android Development Environment.]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/06/10/creating-your-android-development-environment/"/>
+    <updated>2012-06-10T13:26:28+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/06/10/creating-your-android-development-environment</id>
+    <content type="html"><![CDATA[<p>This is step by step to creating android development environment, on macinthos, i've been searching that there were less of article on web that discuss about how to prepare your "machine" for android development on macinthos, so here the article.</p>
+
+<p>I'm gonna develop with eclipse, so first thing that i do is downloading and installing eclipse <a href="http://www.eclipse.org/downloads/">here</a>, eclipse web will choose your eclipse version automatic  based on your operating system, i'm choose eclipse classic with 64 bit version.</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-5-46-37-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-5-46-37-am.png" alt="" /></a></p>
+
+<p>After download finished, extract file in your application directory, just click eclipse icon to run your eclipse. Next step is installing android development tool (ADT Plugin for eclipse). Open eclipse - help - install new software, add https://dl-ssl.google.com/android/eclipse/ url as a repository then click add.</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-00-49-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-00-49-am.png" alt="" /></a></p>
+
+<p>in the add repository dialog that appear enter ADT Plugin for name, then click ok, select the checkbox click next and read and accept lisence agreements and restart eclipse after installation completes. Eclipse will ask you what if you wanna install your own android sdk or download the latest SDK, i'm prefer to download the latest sdk that google provide. To install any android component, on eclipse choose window - Android SDK Manager. You can see all status of your android component and sdk package, what if there are any update for your sdk, eclipse will inform you and offer you to install the sdk update.</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-11-35-am1.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-11-35-am1.png" alt="" /></a></p>
+
+<p>Now is installing android virtual device (avd), choice window - avd manager - then click new.</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-18-30-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-18-30-am.png" alt="" /></a></p>
+
+<p>If you want to build android application for any platform, you must install al android version on drop down target, for memory i'm choice 256 mb memory to make avd run smoothly, for name section, just write it with your own, then click create avd. Then choose the avd version that you wanna use, then click start and launch. <a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-22-10-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-22-10-am.png" alt="" /></a></p>
+
+<p>And here the final result.</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-24-01-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-10-at-6-24-01-am.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+</feed>

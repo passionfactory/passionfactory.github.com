@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Passion Factory]]></title>
+  <link href="http://passionfactory.github.com/atom.xml" rel="self"/>
+  <link href="http://passionfactory.github.com/"/>
+  <updated>2013-01-15T08:22:13+07:00</updated>
+  <id>http://passionfactory.github.com/</id>
+  <author>
+    <name><![CDATA[Syaiful Bahri]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Jujur itu?]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/20/jujur-itu/"/>
+    <updated>2012-12-20T07:17:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/20/jujur-itu</id>
+    <content type="html"><![CDATA[<p>iTunes music store udah resmi tersedia buat Indonesia. Dengan kisaran harga 5000 - 7000 rupiahan, engga ada alasan lagi untuk memberi penghargaan  atas karya musik yang kita nikmati, dengan membeli secara resmi karya musik tersebut. Apalagi, bagi anda pengguna produk Apple yang tentu saja bisa mengakses iTunes music store dan memiliki kartu kredit.<!--more--></p>
+
+<p>Ngomong - ngomong. Ini 10 lagu pertama saya yang secara resmi saya unduh dari iTunes music store.</p>
+
+<p><img src="http://passionfactory.github.com/images/jujur.png"></p>
+
+<blockquote><p>Jujur itu? bisa dimulai dengan tidak mengunduh lagu bajakan lagi</p></blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gem Installing Problem Definitely GCC Missing Problem]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/16/gem-installing-problem-definitely-gcc-missing-problem/"/>
+    <updated>2012-12-16T17:28:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/16/gem-installing-problem-definitely-gcc-missing-problem</id>
+    <content type="html"><![CDATA[<p>Last day i have some problem with my harddrive. I can not boot into system after trying several way like repair the disk inside the OS and installer disc and also using <a href="http://www.alsoft.com/diskwarrior/">DiskWarrior</a>.</p>
+
+<p>I&#8217;m kind of frustrated so i&#8217;m decide to save my files on the disk first using <a href="http://gparted.sourceforge.net/">GParted</a> live dvd method then doing fresh install for my system.<!--more--></p>
+
+<p>Then the problem get around after updating my system to 10.8.2 version (Mountain Lion) when using gem install &#8220;something&#8221;, i&#8217;m encounter error below.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Failed to build gem native extension.
+</span><span class='line'>…
+</span><span class='line'>make: /usr/bin/gcc-4.2: No such file or directory</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yeah, apple definitely remove gcc on mountain lion. What should we do to fix this problem is installing missing gcc into system. I&#8217;m gonna use <a href="http://mxcl.github.com/homebrew/">brew package manager</a>, just simply install script like apt-get on Debian Linux distribution.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install apple-gcc42</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then fix the path</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo ln -s /usr/local/bin/gcc-4.2 /usr/bin/gcc-4.2</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bind Ga Mau Di Restart Euy - Debian]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/11/bind-ga-mau-di-restart-euy-debian/"/>
+    <updated>2012-12-11T08:29:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/11/bind-ga-mau-di-restart-euy-debian</id>
+    <content type="html"><![CDATA[<p>Bind ga mau restart euy, abis apt-get upgrade Debian, ada keterangan kaya gini</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Stopping domain name service: namedrndc: connect failed: connection refused</span></code></pre></td></tr></table></div></figure>
+
+
+<!--more-->
+
+
+<p>Semua domain jadi ga bisa di akses, waduh. Abis browsing sana-sini, ternyata ini soal permission bug di Debian.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chown bind:root /etc/bind/rndc.key
+</span><span class='line'>chmod 660</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Abis itu restart bind nya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/init.d/bind9 restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Problem Solved, <a href="http://kirrus.co.uk/2012/02/bind-refuses-to-restart-debian-squeeze/">Sumber</a></strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH File Transfer Protocol Android Menggunakan SSHDroid]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid/"/>
+    <updated>2012-12-06T17:19:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid</id>
+    <content type="html"><![CDATA[<p>Jadi itu file-file .apk yang kepasang di file system (yang free dan legal tentunya ya) mau dibackup karena mau di reset.Sebenernya ada <a href="https://play.google.com/store/apps/details?id=jackpal.androidterm&amp;hl=en">terminal emulator</a>. Kalo hapenya udah di root bisa langsung mengakses directory .apk yang ada di directory data, lalu menyalin .apk yang ada ke sd card, kemudian untuk menyalin nya ke komputer selanjutnya tinggal menghubungkan hapenya dengan kabel data atau mengeluarkan sd card lalu memasangkan nya dengan card reader, report? yach saya merasakan nya juga.<!--more--></p>
+
+<blockquote><p>Bagaimana kalo bisa langsung saja menyalin file .apk yang terpasang di direktori sistem android ke komputer?</p></blockquote>
+
+
+<p>Unduh dulu SSHDroid <a href="https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid&amp;hl=en">di sini</a> jalankan SSHDroid, kemudian gunakan alamat IP yang tertera untuk menghubungkan sftp klien pada komputer dengan perangkat android</p>
+
+<p><img src="http://passionfactory.github.com/images/sshdroid.png"></p>
+
+<p>saya menggunakan <a href="http://cyberduck.ch">Cyberduck</a> sebagai klien sftp yang saya gunakan pada komputer saya, gunakan root sebagai username dan password admin untuk memulai koneksi</p>
+
+<p><img src="http://passionfactory.github.com/images/cyberduck1.png"></p>
+
+<p>file .apk yang akan saya salin berada pada direktori /data/app</p>
+
+<p><img src="http://passionfactory.github.com/images/cyberduck2.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Listening to - menampilkan notifikasi lagu yang sedang diputar itunes]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/30/listening-to-menampilkan-notifikasi-lagu-yang-sedang-diputar-pada-itunes/"/>
+    <updated>2012-11-30T07:43:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/30/listening-to-menampilkan-notifikasi-lagu-yang-sedang-diputar-pada-itunes</id>
+    <content type="html"><![CDATA[<p><a href="http://www.apple.com/itunes/download/">iTunes 11 emang keren</a>, biar tambah keren, instal <a href="https://itunes.apple.com/us/app/listening-to/id553010133?mt=12">Listening to</a> untuk menampilkan notifikasi lagu yang sedang diputar pada saat menjalankan iTunes.<!--more--></p>
+
+<p>Harga aplikasinya kalo dirupiahin 19 ribuan, cukup worth buat yang ga mau ribet melakukan beberapa pengaturan seperti aplikasi gratis dengan fitur serupa <a href="http://osxdaily.com/2012/08/13/show-now-playing-itunes-alert-notification-center-mac-os-x/">ini</a> -_-. Setelah selesai diunduh dari mac app store, eksekusi aplikasinya kemudian gunakan menu notification setting, untuk mengatur pola notifikasinya.</p>
+
+<p><img src="http://passionfactory.github.com/images/b.png"></p>
+
+<p><strong>Dan Ini Hasil Akhirnya</strong></p>
+
+<p><img src="http://passionfactory.github.com/images/c.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Merubah remote url origin GitHub]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/28/merubah-remote-url-github/"/>
+    <updated>2012-11-28T08:40:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/28/merubah-remote-url-github</id>
+    <content type="html"><![CDATA[<p><strong>Situasinya</strong></p>
+
+<blockquote><p>Saya ingin &#8220;push&#8221; ke repository akun github saya berkas-berkas yang sudah saya edit. Berkas tersebut berasal dari remote url di akun github bukan saya</p></blockquote>
+
+
+<p><strong>Apa yang harus dilakukan?</strong></p>
+
+<blockquote><p>Tentu saja saya harus merubah remote url &#8220;origin&#8221; repositori tersebut</p></blockquote>
+
+
+<!-- more -->
+
+
+<p><strong>Melihat remote url origin sebelumnya</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote -v</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Merubah remote url origin</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote set-url origin "isi dengan remote url repositori yang akan digunakan"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Periksa kembali remote url yang akan digunakan</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote -v</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="https://help.github.com/articles/changing-a-remote-s-url">Sumber</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Manambahkan tag gambar pada octopress]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/24/manambahkan-tag-gambar-pada-octopress-framework/"/>
+    <updated>2012-11-24T08:55:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/24/manambahkan-tag-gambar-pada-octopress-framework</id>
+    <content type="html"><![CDATA[<p>Salin gambar yang akan di gunakan pada directory octopress</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source/images</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Buat artikel baru</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["judul_artikel"]</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+
+<p>Edit artikel</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vim source/_posts/judul_artikel.markdown</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Markdown format yang digunakan untuk menambahkan tag gambar</p>
+
+<pre><code>&lt;img src="http://passionfactory.github.com/images/nama_file"&gt;
+</code></pre>
+
+<p>Selesai ^_^</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[So many dumb ways to die]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/24/so-many-dumb-ways-to-die/"/>
+    <updated>2012-11-24T07:24:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/24/so-many-dumb-ways-to-die</id>
+    <content type="html"><![CDATA[<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/IJNR2EpS0jw "></iframe></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Menggunakan GitHub - Membuat Public Key]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/23/tutorial-git-1-membuat-public-key/"/>
+    <updated>2012-11-23T18:16:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/23/tutorial-git-1-membuat-public-key</id>
+    <content type="html"><![CDATA[<p>Tempo hari, saya dan dua orang rekan saya di <a href="http://twitter.com/kplijakarta">KPLI Jakarta</a> ngumpul bareng ceritanya buat ngerapiin web KPLI Jakarta. Karena kami akan membuat mirror web tersebut di github,
+tentu saja beberapa aturan menggunakan github harus dipenuhi sebelumnya. Salah satunya adalah membuat publik key untuk menetapkan secure connection antara komputer device yang kami gunakan dengan Github.<!-- more --></p>
+
+<p>Artikel ini (ah, saya sebenernya lebih senang menyebutnya sebagai catatan saya, maklum sering lupa -_-) merupakan artikel eh catatan saya untuk menggunakan git pada github, dan saya akan memulainya tentu saja dengan membuat
+publik key terlebih dahulu. Asumsi saya, pada komputer yang akan digunakan, belum pernah terpasang publik key sebelumnya.</p>
+
+<p>Buka terminal kemudian ketik command di bawah ini untuk generate SSH Key yang akan digunakan</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ssh-keygen -t rsa -C "tulis_email_disini"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>kemudian</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Enter passphrase (empty for no passphrase): [Type a passphrase]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>enter</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Enter same passphrase again: [Type passphrase again]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>enter</p>
+
+<p>Copy SSH Key yang akan digunakan</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pbcopy &lt; ~/.ssh/id_rsa.pub</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Kemudian pada akun pengaturan github, pada menu SSH Key, paste kemudian simpan,</p>
+
+<p><img src="http://passionfactory.github.com/images/sshkey.jpg"></p>
+
+<p>lets check it out the SSH Key</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ssh -T git@github.com</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Jika muncul keterangan seperti ini</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>The authenticity of host 'github.com (207.97.227.239)' can't be established.
+</span><span class='line'># RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+</span><span class='line'># Are you sure you want to continue connecting (yes/no)?</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ketik yes untuk melanjutkan, kemudian periksa sekali lagi keterangan yang muncul</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Hi "username_github_kamu! You've successfully authenticated, but GitHub does not
+</span><span class='line'># provide shell access.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Apa sudah sesuai, jika sudah sesuai, saatnya beranjak ke catatan saya selanjutnya, tentu saja setelah saya mencatatnya di sini :D</p>
+
+<p><a href="https://help.github.com/articles/generating-ssh-keys">sumber</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beli Mobil, beli bangku]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/11/beli-mobil/"/>
+    <updated>2012-11-11T01:41:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/11/beli-mobil</id>
+    <content type="html"><![CDATA[<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/qiayR-x0KUw "></iframe></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Migrasi Wordpress, Octopress, & Exitwp]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/"/>
+    <updated>2012-11-10T22:58:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp</id>
+    <content type="html"><![CDATA[<p><strong>Tanya Kenapa?</strong></p>
+
+<ul>
+<li>Bosen sama wordpress.</li>
+<li><a href="http://software.endy.muhardin.com/aplikasi/terima-kasih-wordpress/" title="Terimakasih Wordpress">Artikel Bapak Endy Ini </a> sepertinya cukup mewakili alasan saya yang lain.<!-- more --></li>
+</ul>
+
+
+<p><strong>Catatan</strong></p>
+
+<ul>
+<li>Saya akan menggunakan <a href="https://github.com/thomasf/exitwp">exitwp</a> untuk melakukan konversi artikel wordpress saya menjadi format markdown yang akan digunakan oleh <a href="http://octopress.org">octopress</a>.</li>
+<li>Sistem operasi yang saya gunakan adalah OS X Mountain Lion</li>
+<li><a href="http://mxcl.github.com/homebrew/">Brew package manager</a> sudah terinstal pada sistem operasi saya.</li>
+</ul>
+
+
+<p><strong>Proses Migrasi</strong></p>
+
+<p>instal dependencies yang dibutuhkan</p>
+
+<pre><code>brew install libyaml
+</code></pre>
+
+<p>instal virtualenv untuk menggunakan pip</p>
+
+<pre><code>$ curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
+</code></pre>
+
+<p>instal dependencies untuk menggunakan exitwp menggunakan pip</p>
+
+<pre><code>pip install --upgrade -r python-yaml python-beautifulsoup python-html2text
+</code></pre>
+
+<p>download atau clone repository exitwp di sini <a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
+
+<pre><code>git clone https://github.com/thomasf/exitwp
+</code></pre>
+
+<p>export artikel wordpress menggunakan wordpress exporter</p>
+
+<pre><code>login, kemudian gunakan wordpress exporter tool yang ada di menu setting,
+hasil export berupa file xml yang akan dikonversi menjadi format markdown,
+letakan file xml tersebut pada directory wordpress-xml yang ada pada directory exitwp
+yang sudah didownload.
+</code></pre>
+
+<p>note bagi wordpress versi 3.1</p>
+
+<pre><code>tambahkan xmlns:atom="http://www.w3.org/2005/Atom" pada file xml
+untuk mengatasi error namespace
+</code></pre>
+
+<p>rubah direktori aktif ke wordpress-xml directory</p>
+
+<pre><code>run  xmllint untuk melakukan pengecekan error file xml yang telah diexport
+</code></pre>
+
+<p>rubah direktori aktif ke folder exitwp, kemudian jalankan command dibawah ini untuk melakukan konversi</p>
+
+<pre><code>python exitwp.py
+</code></pre>
+
+<p>hasil konversi akan berada pada build directory, pada artikel selanjutnya akan dibahas bagaimana menggunakan artikel yang sudah dikonversi tersebut pada octopress</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Kadang karena satu dan lain hal,]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/07/kadang-karena-satu-dan-lain-hal/"/>
+    <updated>2012-11-07T01:52:22+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/07/kadang-karena-satu-dan-lain-hal</id>
+    <content type="html"><![CDATA[<p>kadang karena satu dan lain hal,
+kita ngerasa kehilangan banget,
+terus nganggep kehidupan or Tuhan udah ga adil sama diri kita,
+apalagi kita udah bener2 sayang and suka banget,
+kayanya ga rela aja kalo misalnya harus ngelepasinnya begitu aja,
+terus hidup kita jadi monoton,
+sehari, dua hari,
+seminggu, sebulan or setahun,<!-- more --></p>
+
+<p>kemudian hidup kita jadi kembali
+seperti sedia kala adanya,
+lo hampir ngelupain semuanya,
+and tanpa lo sadari lo udah ngikhlasinnya begitu aja,
+dulu kita pernah ngadepin hal yg mungkin lebih buruk
+dari sekedar kehilangan,
+gw yakin lo and gw bakalan jadi lebih tegar nantinya,
+yg jelas,
+ini cuma masalah waktu aja sich buat gw and elo
+ngelepas semuanya dengan lapang dada,
+karena ga pernah ada yg sia - sia dalam hidup ini,
+hikmah,
+satu hal yg gw yakin bakalan selalu ada,
+dalam setiap hela napas dan detik demi detik,
+kehidupan kita &#8230;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[So, That's New iOS Phonegap Works]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/06/so-thats-new-ios-phonegap-works/"/>
+    <updated>2012-11-06T02:36:36+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/06/so-thats-new-ios-phonegap-works</id>
+    <content type="html"><![CDATA[<p>Just curious, i&#8217;m not talk about kind of web development way to build iOS app, because for any reason <a href="http://passionfactory.wordpress.com/2012/07/22/im-going-native/">i&#8217;m move to native development,</a> this evening my friend tell me that my article about<a href="http://passionfactory.wordpress.com/2012/06/11/installing-cordova-1-8-on-x-code-4-3-2-for-ios-development/"> using phonegap development to build iOS app</a> is not work again on new phonegap version, <!-- more --> after browsing on <a href="http://phonegap.com">phonegap site</a> on developer getting started guide section, yeah there were new kind of method to make iOS based phonegap work, and here&#8217;s the method</p>
+
+<ol>
+<li><p>As usual, you must download new phonegap version <a href="http://phonegap.com">here</a></p></li>
+<li><p>Extract to your own directory</p></li>
+<li><p>Make sure that you have Xcode &amp; Xcode command line tools installed, you can find it on Mac App Store</p></li>
+<li><p>Phonegap for iOS location is on lib/ios</p></li>
+<li><p>Lauch terminal, move your directory to bin folder location on your phonegap extracted app</p></li>
+</ol>
+
+
+<p>Lets write thing</p>
+
+<pre><code>./create &lt;project_folder_path&gt; &lt;package_name&gt; &lt;project_name&gt; then press "Enter"
+</code></pre>
+
+<p>See my code below for detail</p>
+
+<pre><code>./create /Users/tragicidea/Desktop/HelloWorld org.apache.HelloWorld HelloWorld
+</code></pre>
+
+<p>Open the project folder as you describe above</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-31-43-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-31-43-pm.png" alt="" /></a></p>
+
+<p>Open your Xcode Project File, then run it on simulator</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-33-33-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-33-33-pm.png" alt="" /></a></p>
+
+<p>When you&#8217;re ready, you gonna have this</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-35-00-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-35-00-pm.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tidak Bisa Kirim Email Dari PHP Pada Debian?]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/10/30/tidak-bisa-kirim-email-dari-php-pada-debian/"/>
+    <updated>2012-10-30T23:53:26+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/10/30/tidak-bisa-kirim-email-dari-php-pada-debian</id>
+    <content type="html"><![CDATA[<p>Oke, intinya engga bisa ngirim email verifikasi abis ngisi sign in form, tanya kenapa?</p>
+
+<pre><code>1. Kebiasaan pake hostingan and tinggal terima beres konfigurasi server
+2. Sekarang ceritanya ngelola server sendiri, and baru sadar email verifikasinya engga bisa terkirim
+</code></pre>
+
+<p>And here&#8217;s the info<!-- more --></p>
+
+<pre><code>1. Debian 6
+2. PHP5
+3. Just web server, so you need to install mail transfer agent (MTA)
+4. you need to know your server ip and hostname
+</code></pre>
+
+<p>How to solve?</p>
+
+<pre><code>/* Instal exim untuk MTA */
+
+apt-get install exim4-daemon-light
+
+/* Konfigurasi */
+
+dpkg-reconfigure exim4-config
+</code></pre>
+
+<p>Terus?</p>
+
+<pre><code>Jawab pertanyaan yang ada? ciyus? miapah? :D
+
+General type of mail configuration: internet site; mail is sent and received directly using SMTP
+System mail name: (this should be your servers full hostname) #isi hostname server
+IP-addresses to listen on for incoming SMTP connections:127.0.0.1;isi_ip_server
+Other destinations for which mail is accepted: Select ok
+Domains to relay mail for: blank, select ok
+Machines to relay mail for: blank, select ok
+Keep number of DNS-queries minimal (Dial-on-Demand)? No
+Delivery method for local mail: mbox format in /var/mail/
+Split configuration into small files? Yes
+Root and postmaster mail recipient: isi dengan lokal user server
+</code></pre>
+
+<p>Selesai, coba kirim email dari script php kamu :-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blackberry 10 Dev Alpha, Android Runtime Support & Sideload Install.]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/10/28/blackberry-10-dev-alpha-android-runtime-support-sideload-install/"/>
+    <updated>2012-10-28T06:18:01+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/10/28/blackberry-10-dev-alpha-android-runtime-support-sideload-install</id>
+    <content type="html"><![CDATA[<p>Pada event Blackberry 10 Jam World Tour Jakarta, saya bersama beberapa peserta terpilih berkesempatan untuk mendapatkan prototype blackberry 10 yang dinamakan blackberry 10 dev alpha. Sebenarnya ini bukan berita baru, tetapi karena baru belakangan ini saya bisa hands-on dengan prototype blackberry 10 tersebut, dan menemukan beberapa hal menarik, salah satunya adalah mengenai metode pengembangan baru menggunakan android runtime, yang dalam hal ini menguntungkan developer yang mengembangkan aplikasi android untuk melakukan porting dengan mudah pada device blackberry 10 nantinya ketika sudah resmi di launching.<!-- more --></p>
+
+<p>Tujuan RIM membagikan prototype blackberry 10 tersebut kepada developer tidak lain adalah untuk memberikan kesempatan kepada developer baik yang berbasis native development (QT, C++), webwork, air dan android runtime untuk mencoba mengembangkan aplikasi di blackberry 10, saya sendiri karena memiliki latar belakang pengembangan berbasis android, mencoba untuk menggunakan metode berbasis android runtime, melakukan porting aplikasi yang pernah saya buat menggunakan tool yang sudah disediakan resource nya di <a href="http://developer.blackberry.com">sini</a>. Menarik, bahkan dengan online tool yang tersedia, saya tidak perlu melakukan perubahan sama sekali pada kode program android yang pernah saya buat, saya hanya perlu mengimport .apk saya dan secara otomatis online tool tersebut akan melakukan konversi menjadi .bar yang merupakan format file aplikasi yang juga merupakan format file aplikasi pada playbook.</p>
+
+<p>Saya tidak akan menyinggung banyak mengenai blackberry 10 dev alphanya, secara berkala saya akan mencatat hands-on saya di blog ini mengenai blackberry 10 dev alpha tersebut, yang akan saya sampaikan selanjutnya adalah mengenai metode instalasi aplikasi yang sudah saya porting (tanpa menemui kendala / tidak gagal) juga beberapa aplikasi android (yang free tentunya) yang sengaja saya coba porting untuk saya gunakan pada blackberry 10 dev alpha ini, karena saya terkesan dengan user interface dan experiencenya.</p>
+
+<p>Metode instalasi yang saya gunakan dinamakan sideload, dimana saya akan menginstalasikan secara langsung melalui jaringan wifi yang terhubung pada network yang sama menggunakan playbook tools yang bisa di download <a href="http://www.mediafire.com/?msi5u4ni3h8nx53">di sini</a>. Saya menggunakan OS X, dan belum mencoba metode ini pada Windows, setelah di download extract file playbook tools yang sudah di download pada direktori yang anda inginkan. Berikut ini beberapa tahap yang dilakukan :</p>
+
+<ol>
+<li><p>Pastikan mengetahui ip address yang digunakan oleh blackberry 10 dev alpha dengan membuka menu setting - network connections - wifi - advanced - internet connection yang akan digunakan pada proses instalasi.</p></li>
+<li><p>Aktifkan development mode yang terdapat pada menu setting - security and privacy - development mode, masukan password yang akan digunakan pada proses instalasi nantinya</p></li>
+<li><p>Letakan aplikasi android yang sudah diporting (.bar) pada kedalam direktori yang sama dengan file playbook tool yang sudah di extract kemudian gunakan perintah dibawah ini untuk melakukan instalasi menggunakan metode sideload, sebagai contoh saya akan melakukan instalasi twitter for android yang sudah diporting menjadi file .bar</p></li>
+</ol>
+
+
+<pre><code>java -Xmx512M -jar BarDeploy.jar -installApp -device 192.168.1.101 -password 1234 Twitter.bar
+</code></pre>
+
+<p>sesuaikan dengan ip address dan password development mode pada device, serta nama aplikasi yang diinstalasikan. Menarik bukan, bisa menggunakan aplikasi android yang biasa digunakan + BBM-an, seperti memiliki android device dan blackberry dalam 1 device, thats all :-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[We Miss You Steve]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/10/05/we-miss-you-steve/"/>
+    <updated>2012-10-05T17:42:55+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/10/05/we-miss-you-steve</id>
+    <content type="html"><![CDATA[<p><a href="http://passionfactory.files.wordpress.com/2012/10/a5071alcmaakq5g.jpg"><img src="http://passionfactory.files.wordpress.com/2012/10/a5071alcmaakq5g.jpg" alt="" /></a></p>
+
+<p>Yeah, it&#8217;s been one years he left, but all of his innovation is rest to us, always.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Version Control Ya?]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/10/02/version-control-ya/"/>
+    <updated>2012-10-02T00:10:40+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/10/02/version-control-ya</id>
+    <content type="html"><![CDATA[<p>Screenshoot dari buku git pro tentang definisi version control disini mungkin bisa membantu</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/10/screen-shot-2012-10-01-at-5-06-23-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/10/screen-shot-2012-10-01-at-5-06-23-pm.png" alt="" /></a></p>
+
+<p>Menurut gw, ini penjelasan yg paling nyambung sama gw, dari situ udah jelas kan gunanya buat apa</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[16 RSVP Remains]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/09/26/16-rsvp-remains/"/>
+    <updated>2012-09-26T15:15:16+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/09/26/16-rsvp-remains</id>
+    <content type="html"><![CDATA[<p><a href="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-8-06-20-am.png"><img src="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-8-06-20-am.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ada Yang Baru Di Update BB 10 Dev Alpha]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/09/26/ada-yang-baru-di-update-bb-10-dev-alpha/"/>
+    <updated>2012-09-26T14:58:35+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/09/26/ada-yang-baru-di-update-bb-10-dev-alpha</id>
+    <content type="html"><![CDATA[<p><a href="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-7-55-46-am.png"><img src="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-7-55-46-am.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Alesan Mereka [Masih] Pake Windows]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/09/25/alesan-mereka-masih-pake-windows/"/>
+    <updated>2012-09-25T13:55:14+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/09/25/alesan-mereka-masih-pake-windows</id>
+    <content type="html"><![CDATA[<p>Processor gede, ram gede, graphic card super sekali apa mungkin klo bukan buat maen game di windows?</p>
+
+<p><img src="http://passionfactory.files.wordpress.com/2012/09/wpid-dsc_00251.jpg" alt="image" /></p>
+
+<p><img src="http://passionfactory.files.wordpress.com/2012/09/wpid-dsc_00261.jpg" alt="image" /></p>
+]]></content>
+  </entry>
+  
+</feed>

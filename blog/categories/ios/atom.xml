@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iOS | Passion Factory]]></title>
+  <link href="http://passionfactory.github.com/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://passionfactory.github.com/"/>
+  <updated>2013-01-15T08:22:13+07:00</updated>
+  <id>http://passionfactory.github.com/</id>
+  <author>
+    <name><![CDATA[Syaiful Bahri]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[So, That's New iOS Phonegap Works]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/06/so-thats-new-ios-phonegap-works/"/>
+    <updated>2012-11-06T02:36:36+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/06/so-thats-new-ios-phonegap-works</id>
+    <content type="html"><![CDATA[<p>Just curious, i'm not talk about kind of web development way to build iOS app, because for any reason <a href="http://passionfactory.wordpress.com/2012/07/22/im-going-native/">i'm move to native development,</a> this evening my friend tell me that my article about<a href="http://passionfactory.wordpress.com/2012/06/11/installing-cordova-1-8-on-x-code-4-3-2-for-ios-development/"> using phonegap development to build iOS app</a> is not work again on new phonegap version, <!-- more --> after browsing on <a href="http://phonegap.com">phonegap site</a> on developer getting started guide section, yeah there were new kind of method to make iOS based phonegap work, and here's the method</p>
+
+<ol>
+<li><p>As usual, you must download new phonegap version <a href="http://phonegap.com">here</a></p></li>
+<li><p>Extract to your own directory</p></li>
+<li><p>Make sure that you have Xcode &amp; Xcode command line tools installed, you can find it on Mac App Store</p></li>
+<li><p>Phonegap for iOS location is on lib/ios</p></li>
+<li><p>Lauch terminal, move your directory to bin folder location on your phonegap extracted app</p></li>
+</ol>
+
+
+<p>Lets write thing</p>
+
+<pre><code>./create &lt;project_folder_path&gt; &lt;package_name&gt; &lt;project_name&gt; then press "Enter"
+</code></pre>
+
+<p>See my code below for detail</p>
+
+<pre><code>./create /Users/tragicidea/Desktop/HelloWorld org.apache.HelloWorld HelloWorld
+</code></pre>
+
+<p>Open the project folder as you describe above</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-31-43-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-31-43-pm.png" alt="" /></a></p>
+
+<p>Open your Xcode Project File, then run it on simulator</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-33-33-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-33-33-pm.png" alt="" /></a></p>
+
+<p>When you're ready, you gonna have this</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-35-00-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/11/screen-shot-2012-11-05-at-7-35-00-pm.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Secure File Transfer Protocol iPhone.]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/06/16/secure-file-transfer-protocol-iphone/"/>
+    <updated>2012-06-16T01:47:44+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/06/16/secure-file-transfer-protocol-iphone</id>
+    <content type="html"><![CDATA[<p>_<strong>This purpose of this post is you can transfer file between your mac and iphone without sync your iphone into itunes. Here is the guide.</strong><!-- more --></p>
+
+<p><em><strong>Prepare your iphone</strong></em> : make sure that your iphone is jailbreaked, open cydia and search for openSSH then install it. You must be on same wifi network to transfer your file, open settings – wifi – name of your wifi network – and find your iphone ip address there (example 192.168.1.102). You must reboot your iphone to make change.</p>
+
+<p><em><strong>Prepare your mac</strong></em> : download cyberduck <a href="http://cyberduck.ch/">here</a> as SFTP client for your mac, then create new connection with cyberduck, choose SFTP as protocol, type your iphone ip address, use root as username and alpine as password (default password)</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/1.png"><img src="http://passionfactory.files.wordpress.com/2012/06/1.png" alt="" /></a></p>
+
+<p>Once the connection open, you can simply drag and drop your file to your iphone directory</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/2.png"><img src="http://passionfactory.files.wordpress.com/2012/06/2.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Cordova 1.8 On X Code 4.3.2 For iOS Development]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/06/12/installing-cordova-1-8-on-x-code-4-3-2-for-ios-development/"/>
+    <updated>2012-06-12T02:05:04+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/06/12/installing-cordova-1-8-on-x-code-4-3-2-for-ios-development</id>
+    <content type="html"><![CDATA[<p>As title, in this post, i'm gonna show how to installing cordova 1.8 (also known as phonegap) on x code 4.3.2 for iOS development, and here my documentation about it.<!-- more --></p>
+
+<p>Download cordova 1.8 <a href="http://phonegap.com/">here</a>, extract then go to iOS folder, find cordova-1.8.0.dmg there then install</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-17-34-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-17-34-am.png" alt="" /></a></p>
+
+<p>Now open x code ide, we gonna develop iOS app with this, select file - new - project than choose cordova based application</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-19-51-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-19-51-am.png" alt="" /></a></p>
+
+<p>Just simply type your product name, company identifier and don't forget to clear use automatic reference counting</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-20-49-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-20-49-am.png" alt="" /></a></p>
+
+<p>On choose options for adding this file dialog, choose create folder reference for any added folder, and check name of your project</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-34-12-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-34-12-am.png" alt="" /></a></p>
+
+<p>Change simulator type into iPhone 5.1 simulator on the left-top side X Code</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-35-17-am.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-11-35-17-am.png" alt="" /></a></p>
+
+<p>Right click in your root project directory, choose show in finder than add www folder than contain your html, css &amp; javascript file, don't forget to copy cordova file js in this directory</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-6-59-06-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-6-59-06-pm.png" alt="" /></a></p>
+
+<p>Run your project</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-7-02-27-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-7-02-27-pm.png" alt="" /></a></p>
+
+<p>And here my result, how about you :-)</p>
+
+<p><a href="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-2-14-56-pm.png"><img src="http://passionfactory.files.wordpress.com/2012/06/by-default-2012-06-11-at-2-14-56-pm.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+</feed>

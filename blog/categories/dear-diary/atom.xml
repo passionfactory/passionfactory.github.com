@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Dear Diary | Passion Factory]]></title>
+  <link href="http://passionfactory.github.com/blog/categories/dear-diary/atom.xml" rel="self"/>
+  <link href="http://passionfactory.github.com/"/>
+  <updated>2013-01-15T08:22:13+07:00</updated>
+  <id>http://passionfactory.github.com/</id>
+  <author>
+    <name><![CDATA[Syaiful Bahri]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Jujur itu?]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/20/jujur-itu/"/>
+    <updated>2012-12-20T07:17:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/20/jujur-itu</id>
+    <content type="html"><![CDATA[<p>iTunes music store udah resmi tersedia buat Indonesia. Dengan kisaran harga 5000 - 7000 rupiahan, engga ada alasan lagi untuk memberi penghargaan  atas karya musik yang kita nikmati, dengan membeli secara resmi karya musik tersebut. Apalagi, bagi anda pengguna produk Apple yang tentu saja bisa mengakses iTunes music store dan memiliki kartu kredit.<!--more--></p>
+
+<p>Ngomong - ngomong. Ini 10 lagu pertama saya yang secara resmi saya unduh dari iTunes music store.</p>
+
+<p><img src="/images/jujur.png"></p>
+
+<p><blockquote><p>Jujur itu? bisa dimulai dengan tidak mengunduh lagu bajakan lagi</p></blockquote></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Manambahkan tag gambar pada octopress]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/24/manambahkan-tag-gambar-pada-octopress-framework/"/>
+    <updated>2012-11-24T08:55:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/24/manambahkan-tag-gambar-pada-octopress-framework</id>
+    <content type="html"><![CDATA[<p>Salin gambar yang akan di gunakan pada directory octopress</p>
+
+<p><code>
+source/images
+</code></p>
+
+<p>Buat artikel baru</p>
+
+<p><code>
+rake new_post["judul_artikel"]
+</code></p>
+
+<!-- more -->
+
+
+<p>Edit artikel</p>
+
+<p><code>
+vim source/_posts/judul_artikel.markdown
+</code></p>
+
+<p>Markdown format yang digunakan untuk menambahkan tag gambar</p>
+
+<pre><code><img src="/images/nama_file">
+</code></pre>
+
+<p>Selesai ^_^</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[So many dumb ways to die]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/24/so-many-dumb-ways-to-die/"/>
+    <updated>2012-11-24T07:24:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/24/so-many-dumb-ways-to-die</id>
+    <content type="html"><![CDATA[<p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/IJNR2EpS0jw "></iframe></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beli Mobil, beli bangku]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/11/beli-mobil/"/>
+    <updated>2012-11-11T01:41:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/11/beli-mobil</id>
+    <content type="html"><![CDATA[<p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/qiayR-x0KUw "></iframe></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Migrasi Wordpress, Octopress, & Exitwp]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/"/>
+    <updated>2012-11-10T22:58:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp</id>
+    <content type="html"><![CDATA[<p><strong>Tanya Kenapa?</strong></p>
+
+<ul>
+<li>Bosen sama wordpress.</li>
+<li><a href="http://software.endy.muhardin.com/aplikasi/terima-kasih-wordpress/" title="Terimakasih Wordpress">Artikel Bapak Endy Ini </a> sepertinya cukup mewakili alasan saya yang lain.<!-- more --></li>
+</ul>
+
+
+<p><strong>Catatan</strong></p>
+
+<ul>
+<li>Saya akan menggunakan <a href="https://github.com/thomasf/exitwp">exitwp</a> untuk melakukan konversi artikel wordpress saya menjadi format markdown yang akan digunakan oleh <a href="http://octopress.org">octopress</a>.</li>
+<li>Sistem operasi yang saya gunakan adalah OS X Mountain Lion</li>
+<li><a href="http://mxcl.github.com/homebrew/">Brew package manager</a> sudah terinstal pada sistem operasi saya.</li>
+</ul>
+
+
+<p><strong>Proses Migrasi</strong></p>
+
+<p>instal dependencies yang dibutuhkan</p>
+
+<pre><code>brew install libyaml
+</code></pre>
+
+<p>instal virtualenv untuk menggunakan pip</p>
+
+<pre><code>$ curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
+</code></pre>
+
+<p>instal dependencies untuk menggunakan exitwp menggunakan pip</p>
+
+<pre><code>pip install --upgrade -r python-yaml python-beautifulsoup python-html2text
+</code></pre>
+
+<p>download atau clone repository exitwp di sini <a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
+
+<pre><code>git clone https://github.com/thomasf/exitwp
+</code></pre>
+
+<p>export artikel wordpress menggunakan wordpress exporter</p>
+
+<pre><code>login, kemudian gunakan wordpress exporter tool yang ada di menu setting,
+hasil export berupa file xml yang akan dikonversi menjadi format markdown,
+letakan file xml tersebut pada directory wordpress-xml yang ada pada directory exitwp
+yang sudah didownload.
+</code></pre>
+
+<p>note bagi wordpress versi 3.1</p>
+
+<pre><code>tambahkan xmlns:atom="http://www.w3.org/2005/Atom" pada file xml
+untuk mengatasi error namespace
+</code></pre>
+
+<p>rubah direktori aktif ke wordpress-xml directory</p>
+
+<pre><code>run  xmllint untuk melakukan pengecekan error file xml yang telah diexport
+</code></pre>
+
+<p>rubah direktori aktif ke folder exitwp, kemudian jalankan command dibawah ini untuk melakukan konversi</p>
+
+<pre><code>python exitwp.py
+</code></pre>
+
+<p>hasil konversi akan berada pada build directory, pada artikel selanjutnya akan dibahas bagaimana menggunakan artikel yang sudah dikonversi tersebut pada octopress</p>
+]]></content>
+  </entry>
+  
+</feed>

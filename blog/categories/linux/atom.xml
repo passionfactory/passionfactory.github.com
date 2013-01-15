@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | Passion Factory]]></title>
+  <link href="http://passionfactory.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://passionfactory.github.com/"/>
+  <updated>2013-01-15T08:22:13+07:00</updated>
+  <id>http://passionfactory.github.com/</id>
+  <author>
+    <name><![CDATA[Syaiful Bahri]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bind Ga Mau Di Restart Euy - Debian]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/11/bind-ga-mau-di-restart-euy-debian/"/>
+    <updated>2012-12-11T08:29:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/11/bind-ga-mau-di-restart-euy-debian</id>
+    <content type="html"><![CDATA[<p>Bind ga mau restart euy, abis apt-get upgrade Debian, ada keterangan kaya gini</p>
+
+<p><code>
+Stopping domain name service: namedrndc: connect failed: connection refused
+</code><!--more--></p>
+
+<p>Semua domain jadi ga bisa di akses, waduh. Abis browsing sana-sini, ternyata ini soal permission bug di Debian.</p>
+
+<p><code>
+chown bind:root /etc/bind/rndc.key
+chmod 660
+</code>
+Abis itu restart bind nya</p>
+
+<p><code>
+/etc/init.d/bind9 restart
+</code></p>
+
+<p><strong>Problem Solved, <a href="http://kirrus.co.uk/2012/02/bind-refuses-to-restart-debian-squeeze/">Sumber</a></strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH File Transfer Protocol Android Menggunakan SSHDroid]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid/"/>
+    <updated>2012-12-06T17:19:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid</id>
+    <content type="html"><![CDATA[<p>Jadi itu file-file .apk yang kepasang di file system (yang free dan legal tentunya ya) mau dibackup karena mau di reset.Sebenernya ada <a href="https://play.google.com/store/apps/details?id=jackpal.androidterm&amp;hl=en">terminal emulator</a>. Kalo hapenya udah di root bisa langsung mengakses directory .apk yang ada di directory data, lalu menyalin .apk yang ada ke sd card, kemudian untuk menyalin nya ke komputer selanjutnya tinggal menghubungkan hapenya dengan kabel data atau mengeluarkan sd card lalu memasangkan nya dengan card reader, report? yach saya merasakan nya juga.<!--more--></p>
+
+<p><blockquote><p>Bagaimana kalo bisa langsung saja menyalin file .apk yang terpasang di direktori sistem android ke komputer?</p></blockquote></p>
+
+<p>Unduh dulu SSHDroid <a href="https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid&amp;hl=en">di sini</a> jalankan SSHDroid, kemudian gunakan alamat IP yang tertera untuk menghubungkan sftp klien pada komputer dengan perangkat android</p>
+
+<p><img src="/images/sshdroid.png"></p>
+
+<p>saya menggunakan <a href="http://cyberduck.ch">Cyberduck</a> sebagai klien sftp yang saya gunakan pada komputer saya, gunakan root sebagai username dan password admin untuk memulai koneksi</p>
+
+<p><img src="/images/cyberduck1.png"></p>
+
+<p>file .apk yang akan saya salin berada pada direktori /data/app</p>
+
+<p><img src="/images/cyberduck2.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Merubah remote url origin GitHub]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/28/merubah-remote-url-github/"/>
+    <updated>2012-11-28T08:40:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/28/merubah-remote-url-github</id>
+    <content type="html"><![CDATA[<p><strong>Situasinya</strong></p>
+
+<p><blockquote><p>Saya ingin "push" ke repository akun github saya berkas-berkas yang sudah saya edit. Berkas tersebut berasal dari remote url di akun github bukan saya</p></blockquote></p>
+
+<p><strong>Apa yang harus dilakukan?</strong></p>
+
+<p><blockquote><p>Tentu saja saya harus merubah remote url "origin" repositori tersebut<br/></p></blockquote></p>
+
+<!-- more -->
+
+
+<p><strong>Melihat remote url origin sebelumnya</strong></p>
+
+<p><code>
+git remote -v
+</code></p>
+
+<p><strong>Merubah remote url origin</strong></p>
+
+<p><code>
+git remote set-url origin "isi dengan remote url repositori yang akan digunakan"
+</code></p>
+
+<p><strong>Periksa kembali remote url yang akan digunakan</strong></p>
+
+<p><code>
+git remote -v
+</code></p>
+
+<p><a href="https://help.github.com/articles/changing-a-remote-s-url">Sumber</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tidak Bisa Kirim Email Dari PHP Pada Debian?]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/10/30/tidak-bisa-kirim-email-dari-php-pada-debian/"/>
+    <updated>2012-10-30T23:53:26+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/10/30/tidak-bisa-kirim-email-dari-php-pada-debian</id>
+    <content type="html"><![CDATA[<p>Oke, intinya engga bisa ngirim email verifikasi abis ngisi sign in form, tanya kenapa?</p>
+
+<pre><code>1. Kebiasaan pake hostingan and tinggal terima beres konfigurasi server
+2. Sekarang ceritanya ngelola server sendiri, and baru sadar email verifikasinya engga bisa terkirim
+</code></pre>
+
+<p>And here's the info<!-- more --></p>
+
+<pre><code>1. Debian 6
+2. PHP5
+3. Just web server, so you need to install mail transfer agent (MTA)
+4. you need to know your server ip and hostname
+</code></pre>
+
+<p>How to solve?</p>
+
+<pre><code>/* Instal exim untuk MTA */
+
+apt-get install exim4-daemon-light
+
+/* Konfigurasi */
+
+dpkg-reconfigure exim4-config
+</code></pre>
+
+<p>Terus?</p>
+
+<pre><code>Jawab pertanyaan yang ada? ciyus? miapah? :D
+
+General type of mail configuration: internet site; mail is sent and received directly using SMTP
+System mail name: (this should be your servers full hostname) #isi hostname server
+IP-addresses to listen on for incoming SMTP connections:127.0.0.1;isi_ip_server
+Other destinations for which mail is accepted: Select ok
+Domains to relay mail for: blank, select ok
+Machines to relay mail for: blank, select ok
+Keep number of DNS-queries minimal (Dial-on-Demand)? No
+Delivery method for local mail: mbox format in /var/mail/
+Split configuration into small files? Yes
+Root and postmaster mail recipient: isi dengan lokal user server
+</code></pre>
+
+<p>Selesai, coba kirim email dari script php kamu :-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Kopdar Intern KPLI Jakarta - Rumah Makan Cibiuk Tebet.]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/09/24/kopdar-intern-kpli-jakarta-rumah-makan-cibiuk-tebet/"/>
+    <updated>2012-09-24T13:47:59+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/09/24/kopdar-intern-kpli-jakarta-rumah-makan-cibiuk-tebet</id>
+    <content type="html"><![CDATA[<p><a href="http://passionfactory.files.wordpress.com/2012/09/kopdar.jpg"><img src="http://passionfactory.files.wordpress.com/2012/09/kopdar.jpg" alt="" /></a></p>
+
+<p><em>"Tidak ada yang lebih nyaman dalam bekerja selain bekerja bersama rekan-rekan baik - Amri Shadiq"</em></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Macinthos | Passion Factory]]></title>
+  <link href="http://passionfactory.github.com/blog/categories/macinthos/atom.xml" rel="self"/>
+  <link href="http://passionfactory.github.com/"/>
+  <updated>2013-01-15T08:22:13+07:00</updated>
+  <id>http://passionfactory.github.com/</id>
+  <author>
+    <name><![CDATA[Syaiful Bahri]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gem Installing Problem Definitely GCC Missing Problem]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/16/gem-installing-problem-definitely-gcc-missing-problem/"/>
+    <updated>2012-12-16T17:28:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/16/gem-installing-problem-definitely-gcc-missing-problem</id>
+    <content type="html"><![CDATA[<p>Last day i have some problem with my harddrive. I can not boot into system after trying several way like repair the disk inside the OS and installer disc and also using <a href="http://www.alsoft.com/diskwarrior/">DiskWarrior</a>.</p>
+
+<p>I'm kind of frustrated so i'm decide to save my files on the disk first using <a href="http://gparted.sourceforge.net/">GParted</a> live dvd method then doing fresh install for my system.<!--more--></p>
+
+<p>Then the problem get around after updating my system to 10.8.2 version (Mountain Lion) when using gem install "something", i'm encounter error below.</p>
+
+<p><code>
+ERROR: Failed to build gem native extension.
+…
+make: /usr/bin/gcc-4.2: No such file or directory
+</code></p>
+
+<p>Yeah, apple definitely remove gcc on mountain lion. What should we do to fix this problem is installing missing gcc into system. I'm gonna use <a href="http://mxcl.github.com/homebrew/">brew package manager</a>, just simply install script like apt-get on Debian Linux distribution.</p>
+
+<p><code>
+brew install apple-gcc42
+</code></p>
+
+<p>Then fix the path</p>
+
+<p><code>
+sudo ln -s /usr/local/bin/gcc-4.2 /usr/bin/gcc-4.2
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH File Transfer Protocol Android Menggunakan SSHDroid]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid/"/>
+    <updated>2012-12-06T17:19:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/12/06/secure-shell-access-android-using-ssh-droid</id>
+    <content type="html"><![CDATA[<p>Jadi itu file-file .apk yang kepasang di file system (yang free dan legal tentunya ya) mau dibackup karena mau di reset.Sebenernya ada <a href="https://play.google.com/store/apps/details?id=jackpal.androidterm&amp;hl=en">terminal emulator</a>. Kalo hapenya udah di root bisa langsung mengakses directory .apk yang ada di directory data, lalu menyalin .apk yang ada ke sd card, kemudian untuk menyalin nya ke komputer selanjutnya tinggal menghubungkan hapenya dengan kabel data atau mengeluarkan sd card lalu memasangkan nya dengan card reader, report? yach saya merasakan nya juga.<!--more--></p>
+
+<p><blockquote><p>Bagaimana kalo bisa langsung saja menyalin file .apk yang terpasang di direktori sistem android ke komputer?</p></blockquote></p>
+
+<p>Unduh dulu SSHDroid <a href="https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid&amp;hl=en">di sini</a> jalankan SSHDroid, kemudian gunakan alamat IP yang tertera untuk menghubungkan sftp klien pada komputer dengan perangkat android</p>
+
+<p><img src="/images/sshdroid.png"></p>
+
+<p>saya menggunakan <a href="http://cyberduck.ch">Cyberduck</a> sebagai klien sftp yang saya gunakan pada komputer saya, gunakan root sebagai username dan password admin untuk memulai koneksi</p>
+
+<p><img src="/images/cyberduck1.png"></p>
+
+<p>file .apk yang akan saya salin berada pada direktori /data/app</p>
+
+<p><img src="/images/cyberduck2.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Listening to - menampilkan notifikasi lagu yang sedang diputar itunes]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/30/listening-to-menampilkan-notifikasi-lagu-yang-sedang-diputar-pada-itunes/"/>
+    <updated>2012-11-30T07:43:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/30/listening-to-menampilkan-notifikasi-lagu-yang-sedang-diputar-pada-itunes</id>
+    <content type="html"><![CDATA[<p><a href="http://www.apple.com/itunes/download/">iTunes 11 emang keren</a>, biar tambah keren, instal <a href="https://itunes.apple.com/us/app/listening-to/id553010133?mt=12">Listening to</a> untuk menampilkan notifikasi lagu yang sedang diputar pada saat menjalankan iTunes.<!--more--></p>
+
+<p>Harga aplikasinya kalo dirupiahin 19 ribuan, cukup worth buat yang ga mau ribet melakukan beberapa pengaturan seperti aplikasi gratis dengan fitur serupa <a href="http://osxdaily.com/2012/08/13/show-now-playing-itunes-alert-notification-center-mac-os-x/">ini</a> -_-. Setelah selesai diunduh dari mac app store, eksekusi aplikasinya kemudian gunakan menu notification setting, untuk mengatur pola notifikasinya.</p>
+
+<p><img src="/images/b.png"></p>
+
+<p><strong>Dan Ini Hasil Akhirnya</strong></p>
+
+<p><img src="/images/c.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Menggunakan GitHub - Membuat Public Key]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/23/tutorial-git-1-membuat-public-key/"/>
+    <updated>2012-11-23T18:16:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/23/tutorial-git-1-membuat-public-key</id>
+    <content type="html"><![CDATA[<p>Tempo hari, saya dan dua orang rekan saya di <a href="http://twitter.com/kplijakarta">KPLI Jakarta</a> ngumpul bareng ceritanya buat ngerapiin web KPLI Jakarta. Karena kami akan membuat mirror web tersebut di github,
+tentu saja beberapa aturan menggunakan github harus dipenuhi sebelumnya. Salah satunya adalah membuat publik key untuk menetapkan secure connection antara komputer device yang kami gunakan dengan Github.<!-- more --></p>
+
+<p>Artikel ini (ah, saya sebenernya lebih senang menyebutnya sebagai catatan saya, maklum sering lupa -_-) merupakan artikel eh catatan saya untuk menggunakan git pada github, dan saya akan memulainya tentu saja dengan membuat
+publik key terlebih dahulu. Asumsi saya, pada komputer yang akan digunakan, belum pernah terpasang publik key sebelumnya.</p>
+
+<p>Buka terminal kemudian ketik command di bawah ini untuk generate SSH Key yang akan digunakan</p>
+
+<p><code>   
+ssh-keygen -t rsa -C "tulis_email_disini"
+</code></p>
+
+<p>kemudian</p>
+
+<p><code>
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+</code></p>
+
+<p>enter</p>
+
+<p><code>
+Enter same passphrase again: [Type passphrase again]
+</code></p>
+
+<p>enter</p>
+
+<p>Copy SSH Key yang akan digunakan</p>
+
+<p><code>
+pbcopy &lt; ~/.ssh/id_rsa.pub
+</code></p>
+
+<p>Kemudian pada akun pengaturan github, pada menu SSH Key, paste kemudian simpan,</p>
+
+<p><img src="/images/sshkey.jpg"></p>
+
+<p>lets check it out the SSH Key</p>
+
+<p><code>
+ssh -T git@github.com
+</code></p>
+
+<p>Jika muncul keterangan seperti ini</p>
+
+<p>```
+The authenticity of host 'github.com (207.97.227.239)' can't be established.</p>
+
+<h1>RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</h1>
+
+<h1>Are you sure you want to continue connecting (yes/no)?</h1>
+
+<p>```
+ketik yes untuk melanjutkan, kemudian periksa sekali lagi keterangan yang muncul</p>
+
+<p>```
+Hi "username_github_kamu! You've successfully authenticated, but GitHub does not</p>
+
+<h1>provide shell access.</h1>
+
+<p>```</p>
+
+<p>Apa sudah sesuai, jika sudah sesuai, saatnya beranjak ke catatan saya selanjutnya, tentu saja setelah saya mencatatnya di sini :D</p>
+
+<p><a href="https://help.github.com/articles/generating-ssh-keys">sumber</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Migrasi Wordpress, Octopress, & Exitwp]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/"/>
+    <updated>2012-11-10T22:58:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp</id>
+    <content type="html"><![CDATA[<p><strong>Tanya Kenapa?</strong></p>
+
+<ul>
+<li>Bosen sama wordpress.</li>
+<li><a href="http://software.endy.muhardin.com/aplikasi/terima-kasih-wordpress/" title="Terimakasih Wordpress">Artikel Bapak Endy Ini </a> sepertinya cukup mewakili alasan saya yang lain.<!-- more --></li>
+</ul>
+
+
+<p><strong>Catatan</strong></p>
+
+<ul>
+<li>Saya akan menggunakan <a href="https://github.com/thomasf/exitwp">exitwp</a> untuk melakukan konversi artikel wordpress saya menjadi format markdown yang akan digunakan oleh <a href="http://octopress.org">octopress</a>.</li>
+<li>Sistem operasi yang saya gunakan adalah OS X Mountain Lion</li>
+<li><a href="http://mxcl.github.com/homebrew/">Brew package manager</a> sudah terinstal pada sistem operasi saya.</li>
+</ul>
+
+
+<p><strong>Proses Migrasi</strong></p>
+
+<p>instal dependencies yang dibutuhkan</p>
+
+<pre><code>brew install libyaml
+</code></pre>
+
+<p>instal virtualenv untuk menggunakan pip</p>
+
+<pre><code>$ curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
+</code></pre>
+
+<p>instal dependencies untuk menggunakan exitwp menggunakan pip</p>
+
+<pre><code>pip install --upgrade -r python-yaml python-beautifulsoup python-html2text
+</code></pre>
+
+<p>download atau clone repository exitwp di sini <a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
+
+<pre><code>git clone https://github.com/thomasf/exitwp
+</code></pre>
+
+<p>export artikel wordpress menggunakan wordpress exporter</p>
+
+<pre><code>login, kemudian gunakan wordpress exporter tool yang ada di menu setting,
+hasil export berupa file xml yang akan dikonversi menjadi format markdown,
+letakan file xml tersebut pada directory wordpress-xml yang ada pada directory exitwp
+yang sudah didownload.
+</code></pre>
+
+<p>note bagi wordpress versi 3.1</p>
+
+<pre><code>tambahkan xmlns:atom="http://www.w3.org/2005/Atom" pada file xml
+untuk mengatasi error namespace
+</code></pre>
+
+<p>rubah direktori aktif ke wordpress-xml directory</p>
+
+<pre><code>run  xmllint untuk melakukan pengecekan error file xml yang telah diexport
+</code></pre>
+
+<p>rubah direktori aktif ke folder exitwp, kemudian jalankan command dibawah ini untuk melakukan konversi</p>
+
+<pre><code>python exitwp.py
+</code></pre>
+
+<p>hasil konversi akan berada pada build directory, pada artikel selanjutnya akan dibahas bagaimana menggunakan artikel yang sudah dikonversi tersebut pada octopress</p>
+]]></content>
+  </entry>
+  
+</feed>
