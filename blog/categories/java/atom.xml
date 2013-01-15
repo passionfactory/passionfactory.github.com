@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | Passion Factory]]></title>
   <link href="http://passionfactory.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://passionfactory.github.com/"/>
-  <updated>2013-01-15T09:19:24+07:00</updated>
+  <updated>2013-01-15T09:21:31+07:00</updated>
   <id>http://passionfactory.github.com/</id>
   <author>
     <name><![CDATA[Syaiful Bahri]]></name>
@@ -22,8 +22,7 @@
 
 <p>After doing some search on the web, there were a method to make eclipse ide adjust retina display resolution.<!--more--></p>
 
-<p>Just right click on Eclipse.app, then choose show package contents, then edit info.plist file on contents folder,
-above </dict></plist> then add this script below.</p>
+<p>Just right click on Eclipse.app, then choose show package contents, then edit info.plist file on contents folder, then add this script below.</p>
 
 <p><code>
 &lt;key&gt;NSHighResolutionCapable&lt;/key&gt;
