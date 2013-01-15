@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | Passion Factory]]></title>
   <link href="http://passionfactory.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://passionfactory.github.com/"/>
-  <updated>2013-01-15T08:59:41+07:00</updated>
+  <updated>2013-01-15T09:13:27+07:00</updated>
   <id>http://passionfactory.github.com/</id>
   <author>
     <name><![CDATA[Syaiful Bahri]]></name>
@@ -18,7 +18,20 @@
     <link href="http://passionfactory.github.com/blog/2013/01/15/how-to-make-eclipse-ide-support-retina-display/"/>
     <updated>2013-01-15T08:45:00+07:00</updated>
     <id>http://passionfactory.github.com/blog/2013/01/15/how-to-make-eclipse-ide-support-retina-display</id>
-    <content type="html"><![CDATA[<p><blockquote><p>Got a retina display macbook pro, suddenly falling in love with the display, but seem my eclipse ide is not supporting the display resolution which is 2880 x 1800 px. Ah, eclipse ide display look terrifying.</p></blockquote></p>
+    <content type="html"><![CDATA[<p><blockquote><p>Got a retina display macbook pro, suddenly falling in love with the display, but seem my eclipse ide is not supporting the display resolution which is 2880 x 1800 px. Ah, eclipse ide display look terrifying with that display resolution.</p></blockquote></p>
+
+<p>After doing some search on the web, there were a method to make eclipse ide adjust retina display resolution, below is the method.<!--more--></p>
+
+<p>```</p>
+
+<!-- right click on Eclipse.app, then choose show package contents, then edit info.plist file on Contents folder,
+above </dict></plist> add this script below-->
+
+
+<p><key>NSHighResolutionCapable</key>
+<true/>
+```
+Copy your eclipse folder to another directory, then delete the original eclipse folder, than copy again eclipse folder on directory that you choose before, for example on your application directory. Run eclipse ide as usual, and now you can enjoyed eclipse ide with retina diplay support.</p>
 ]]></content>
   </entry>
   
