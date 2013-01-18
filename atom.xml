@@ -4,7 +4,7 @@
   <title><![CDATA[Passion Factory]]></title>
   <link href="http://passionfactory.github.com/atom.xml" rel="self"/>
   <link href="http://passionfactory.github.com/"/>
-  <updated>2013-01-15T09:23:25+07:00</updated>
+  <updated>2013-01-18T08:21:11+07:00</updated>
   <id>http://passionfactory.github.com/</id>
   <author>
     <name><![CDATA[Syaiful Bahri]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sharing a folder from your Mac to a virtual machine using VMware Fusion]]></title>
+    <link href="http://passionfactory.github.com/blog/2013/01/18/sharing-a-folder-from-your-mac-to-a-virtual-machine/"/>
+    <updated>2013-01-18T08:10:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2013/01/18/sharing-a-folder-from-your-mac-to-a-virtual-machine</id>
+    <content type="html"><![CDATA[<p><strong>Note: VMware Tools must be installed for shared folders to work.</strong></p>
+
+<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/fxNqdE7IanQ "></iframe></div>
+
+
+<p><a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1004055">Source</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How To Make Eclipse Ide Support Retina Display Resolution]]></title>
@@ -578,15 +592,6 @@ Root and postmaster mail recipient: isi dengan lokal user server
     <updated>2012-09-26T15:15:16+07:00</updated>
     <id>http://passionfactory.github.com/blog/2012/09/26/16-rsvp-remains</id>
     <content type="html"><![CDATA[<p><a href="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-8-06-20-am.png"><img src="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-8-06-20-am.png" alt="" /></a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ada Yang Baru Di Update BB 10 Dev Alpha]]></title>
-    <link href="http://passionfactory.github.com/blog/2012/09/26/ada-yang-baru-di-update-bb-10-dev-alpha/"/>
-    <updated>2012-09-26T14:58:35+07:00</updated>
-    <id>http://passionfactory.github.com/blog/2012/09/26/ada-yang-baru-di-update-bb-10-dev-alpha</id>
-    <content type="html"><![CDATA[<p><a href="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-7-55-46-am.png"><img src="http://passionfactory.files.wordpress.com/2012/09/screen-shot-2012-09-26-at-7-55-46-am.png" alt="" /></a></p>
 ]]></content>
   </entry>
   
