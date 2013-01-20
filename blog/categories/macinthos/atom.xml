@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Macinthos | Passion Factory]]></title>
   <link href="http://passionfactory.github.com/blog/categories/macinthos/atom.xml" rel="self"/>
   <link href="http://passionfactory.github.com/"/>
-  <updated>2013-01-20T20:47:45+07:00</updated>
+  <updated>2013-01-20T20:49:18+07:00</updated>
   <id>http://passionfactory.github.com/</id>
   <author>
     <name><![CDATA[Syaiful Bahri]]></name>
@@ -18,9 +18,7 @@
     <link href="http://passionfactory.github.com/blog/2013/01/18/sharing-a-folder-from-your-mac-to-a-virtual-machine/"/>
     <updated>2013-01-18T08:10:00+07:00</updated>
     <id>http://passionfactory.github.com/blog/2013/01/18/sharing-a-folder-from-your-mac-to-a-virtual-machine</id>
-    <content type="html"><![CDATA[<p>For my own reminder.</p>
-
-<p><strong>Note: VMware Tools must be installed for shared folders to work.</strong></p>
+    <content type="html"><![CDATA[<p><strong>Note: VMware Tools must be installed for shared folders to work.</strong><!--more--></p>
 
 <p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/fxNqdE7IanQ "></iframe></div></p>
 
