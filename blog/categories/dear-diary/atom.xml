@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Dear Diary | Passion Factory]]></title>
   <link href="http://passionfactory.github.com/blog/categories/dear-diary/atom.xml" rel="self"/>
   <link href="http://passionfactory.github.com/"/>
-  <updated>2013-01-22T06:40:21+07:00</updated>
+  <updated>2013-01-26T18:21:03+07:00</updated>
   <id>http://passionfactory.github.com/</id>
   <author>
     <name><![CDATA[Syaiful Bahri]]></name>
@@ -12,17 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Setelah Satu Bulan]]></title>
-    <link href="http://passionfactory.github.com/blog/2013/01/22/setelah-satu-bulan/"/>
-    <updated>2013-01-22T06:35:00+07:00</updated>
-    <id>http://passionfactory.github.com/blog/2013/01/22/setelah-satu-bulan</id>
-    <content type="html"><![CDATA[<p><img src="/images/itunes.png"></p>
-
-<p><strong>Lirik tagihan cc -_-</strong></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Jujur itu?]]></title>
@@ -89,6 +78,78 @@ vim source/_posts/judul_artikel.markdown
     <updated>2012-11-11T01:41:00+07:00</updated>
     <id>http://passionfactory.github.com/blog/2012/11/11/beli-mobil</id>
     <content type="html"><![CDATA[<p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/qiayR-x0KUw "></iframe></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Migrasi Wordpress, Octopress, & Exitwp]]></title>
+    <link href="http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp/"/>
+    <updated>2012-11-10T22:58:00+07:00</updated>
+    <id>http://passionfactory.github.com/blog/2012/11/10/migrasi-artikel-wordpress-pada-octopress-menggunakan-exitwp</id>
+    <content type="html"><![CDATA[<p><strong>Tanya Kenapa?</strong></p>
+
+<ul>
+<li>Bosen sama wordpress.</li>
+<li><a href="http://software.endy.muhardin.com/aplikasi/terima-kasih-wordpress/" title="Terimakasih Wordpress">Artikel Bapak Endy Ini </a> sepertinya cukup mewakili alasan saya yang lain.<!-- more --></li>
+</ul>
+
+
+<p><strong>Catatan</strong></p>
+
+<ul>
+<li>Saya akan menggunakan <a href="https://github.com/thomasf/exitwp">exitwp</a> untuk melakukan konversi artikel wordpress saya menjadi format markdown yang akan digunakan oleh <a href="http://octopress.org">octopress</a>.</li>
+<li>Sistem operasi yang saya gunakan adalah OS X Mountain Lion</li>
+<li><a href="http://mxcl.github.com/homebrew/">Brew package manager</a> sudah terinstal pada sistem operasi saya.</li>
+</ul>
+
+
+<p><strong>Proses Migrasi</strong></p>
+
+<p>instal dependencies yang dibutuhkan</p>
+
+<pre><code>brew install libyaml
+</code></pre>
+
+<p>instal virtualenv untuk menggunakan pip</p>
+
+<pre><code>$ curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
+</code></pre>
+
+<p>instal dependencies untuk menggunakan exitwp menggunakan pip</p>
+
+<pre><code>pip install --upgrade -r python-yaml python-beautifulsoup python-html2text
+</code></pre>
+
+<p>download atau clone repository exitwp di sini <a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
+
+<pre><code>git clone https://github.com/thomasf/exitwp
+</code></pre>
+
+<p>export artikel wordpress menggunakan wordpress exporter</p>
+
+<pre><code>login, kemudian gunakan wordpress exporter tool yang ada di menu setting,
+hasil export berupa file xml yang akan dikonversi menjadi format markdown,
+letakan file xml tersebut pada directory wordpress-xml yang ada pada directory exitwp
+yang sudah didownload.
+</code></pre>
+
+<p>note bagi wordpress versi 3.1</p>
+
+<pre><code>tambahkan xmlns:atom="http://www.w3.org/2005/Atom" pada file xml
+untuk mengatasi error namespace
+</code></pre>
+
+<p>rubah direktori aktif ke wordpress-xml directory</p>
+
+<pre><code>run  xmllint untuk melakukan pengecekan error file xml yang telah diexport
+</code></pre>
+
+<p>rubah direktori aktif ke folder exitwp, kemudian jalankan command dibawah ini untuk melakukan konversi</p>
+
+<pre><code>python exitwp.py
+</code></pre>
+
+<p>hasil konversi akan berada pada build directory, pada artikel selanjutnya akan dibahas bagaimana menggunakan artikel yang sudah dikonversi tersebut pada octopress</p>
 ]]></content>
   </entry>
   
